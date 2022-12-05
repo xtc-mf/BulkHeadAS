@@ -1,0 +1,17 @@
+{%extends 'main.html'%}
+
+{% block content %}
+    {% if user.is_authenticated %}
+        Здравствуйте, {{ user.username }}
+        <h1>Ваш профиль</h1>
+        <form action="{% url 'service' %}"><button>Перейти к услугам</button></form>
+        <form action="{% url 'main' %}"><button>Главная страница</button></form>
+    {% else %}
+        <p>You are not Logged in</p>
+        <a href="{% url 'login' %}">login</a>
+        <form action="{% url 'main' %}"><button>Главная страница</button></form>
+    {% endif %}
+        {% if user.is_superuser %}
+            <form action="{% url 'admin:index' %}"><button>Переход в окно администрирования</button></form>
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block title %} Наши услуги {% endblock %}
+
+{% block content %}
+    <h1> Мы предоставялем: </h1>
+    {% for i in object_list %}
+        <p> {{ i.service_name }} </p>
+    {% endfor %}
+    <form action="{% url 'main' %}"><button>Главная страница</button></form>
+    <button>Записаться на услугу</button>
+{% endblock %}

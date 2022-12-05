@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>{% block title %}Автосервис "Балкхед" {% endblock %}</title>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+
+</head>
+<body>
+	{% block content %}
+    <div>
+		<h1 style="font-size: 200%">BulkHead AutoService</h1>
+		<h2 style="font-size: 100%"><small>Мы находимся на Ул.Колесникова 3</small></h2>
+		<h3 style="font-size: 100%">Предоставляем услуги по ремонту и обслуживанию авто всех брендов с использованием новейшего профессионального оборудования</h3>
+
+	</div>
+	<div>
+	<img src="Assets\mainpic.png" width = "600" height = "300" alt="mainpicture" align ="left" vspace="140" hspace="900">
+	<div class ="square">
+        <div>
+            <form action="{% url 'service' %}"><button>Перейти к услугам</button></form>
+            <form action="{% url 'about' %}"><button>О нас</button></form>
+            <form action="{% url 'myaccount' %}"><button>Личный кабинет</button></form>
+        </div>
+    </div>
+	{% endblock %}
+	</div>
+</body>
+</html>
