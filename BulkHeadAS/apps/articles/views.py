@@ -4,6 +4,7 @@ from django.shortcuts import render, redirect
 from .models import Article
 from django.views.generic import ListView
 from . models import Services
+from .forms import Entrollment
 
 class MyAccountView(CreateView):
     model = Article
@@ -21,4 +22,14 @@ def about(request):
     return render(request, 'about/about.html')
 def services(request):
     return render(request, 'services/outservecies.html')
+
+
+def serviceEntrollment(request):
+    if request.method == "POST":
+        form = Entrollment(request.POST)
+        if form.is_valid():
+            form.save()
+            #Article.objects.create(**form.cleaned_data)
+        return redirect('index')
+    return render(request, 'entrollment.html', {'form': Entrollment})
 

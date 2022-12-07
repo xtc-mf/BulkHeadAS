@@ -7,5 +7,5 @@
         <p> {{ i.service_name }} </p>
     {% endfor %}
     <form action="{% url 'main' %}"><button>Главная страница</button></form>
-    <button>Записаться на услугу</button>
+    <form action="{% url 'entrollment' %}"><button>Записаться на услугу</button></form>
 {% endblock %}
