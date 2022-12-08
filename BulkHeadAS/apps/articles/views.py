@@ -20,16 +20,12 @@ def index(request):
     return render(request, 'main.html')
 def about(request):
     return render(request, 'about/about.html')
-def services(request):
-    return render(request, 'services/outservecies.html')
-
 
 def serviceEntrollment(request):
     if request.method == "POST":
         form = Entrollment(request.POST)
-        if form.is_valid():
-            form.save()
-            #Article.objects.create(**form.cleaned_data)
+        #if form.is_valid():
+        form.save()
         return redirect('index')
     return render(request, 'entrollment.html', {'form': Entrollment})
 

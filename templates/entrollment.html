@@ -1,11 +1,11 @@
 {% extends 'base.html' %}
 {% block title %} Запись на услугу {% endblock %}
 {% block content %}
-    <fieldset>
+
     <form action="{% url 'entrollment' %}" method="POST" enctype="multipart/form-data">
     {% csrf_token %}
-    {{ form }}
+    <table>{{ form.as_table }}</table>
     <button type="submit">Записаться на услугу</button>
     </form>
-    </fieldset>
+
 {% endblock %}
