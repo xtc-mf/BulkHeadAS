@@ -8,8 +8,13 @@
 <h2>Регистрация</h2>
 <form method="post">
     {% csrf_token %}
-    {{ form.as_p }}
+    <table>
+    {{ form.as_table }}
+    </table>
     <button type ="submit">Регистрация</button>
+    <form><a href="{% url 'main' %}">Отмена</a></form>
+    <form><a href="{% url 'login' %}">Есть аккаунт? Войдите.</a></form>
+
 </form>
 </body>
 </html>

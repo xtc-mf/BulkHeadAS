@@ -6,6 +6,7 @@
         <h1>Ваш профиль</h1>
         <form action="{% url 'service' %}"><button>Перейти к услугам</button></form>
         <form action="{% url 'main' %}"><button>Главная страница</button></form>
+        <form action="{% url 'login' %}"><button>Сменить пользователя</button></form>
     {% else %}
         <p>You are not Logged in</p>
         <a href="{% url 'login' %}">login</a>

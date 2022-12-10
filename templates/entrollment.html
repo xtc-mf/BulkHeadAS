@@ -6,6 +6,9 @@
     {% csrf_token %}
     <table>{{ form.as_table }}</table>
     <button type="submit">Записаться на услугу</button>
+        <form><a href="{% url 'main' %}">Отмена</a></form>
+
+
     </form>
 
 {% endblock %}
