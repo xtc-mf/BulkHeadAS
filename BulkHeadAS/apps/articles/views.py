@@ -24,8 +24,8 @@ def about(request):
 def serviceEntrollment(request):
     if request.method == "POST":
         form = Entrollment(request.POST)
-        #if form.is_valid():
-        form.save()
+        if form.is_valid():
+            form.save()
         return redirect('index')
     return render(request, 'entrollment.html', {'form': Entrollment})
 
