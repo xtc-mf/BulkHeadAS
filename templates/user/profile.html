@@ -1,18 +1,37 @@
-{%extends 'main.html'%}
+{% extends 'base.html' %}
+
+{% block title %} Ваш профиль {% endblock %}
 
 {% block content %}
-    {% if user.is_authenticated %}
-        Здравствуйте, {{ user.username }}
-        <h1>Ваш профиль</h1>
-        <form action="{% url 'service' %}"><button>Перейти к услугам</button></form>
-        <form action="{% url 'main' %}"><button>Главная страница</button></form>
-        <form action="{% url 'login' %}"><button>Сменить пользователя</button></form>
-    {% else %}
-        <p>You are not Logged in</p>
-        <a href="{% url 'login' %}">login</a>
-        <form action="{% url 'main' %}"><button>Главная страница</button></form>
-    {% endif %}
-        {% if user.is_superuser %}
-            <form action="{% url 'admin:index' %}"><button>Переход в окно администрирования</button></form>
+    <div class="container rounded bg-white mt-5 mb-5">
+    <div class="row">
+        <div class="col-md-5 border-right">
+            <div class="p-3 py-5">
+                {% if user.is_authenticated %}
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h4 class="text-right">Ваш профиль</h4>
+                </div>
+                Здравствуйте, <b>{{ user.username }}</b>!
+                    <p></p>
+                <div class="row mt-2" align="center">
+                    <div class="btn-group" align="center">
+                        <form action="{% url 'login' %}"><button class="btn btn-outline-danger"> Сменить пользователя </button></form>
+                        <p> </p>
+                        <form action="{% url 'main' %}"><button class="btn btn-outline-warning"> Главная страница </button></form>
+                        <p> </p>
+                        <form action="{% url 'service' %}"><button class="btn btn-outline-success"> Перейти к услугам </button></form>
+                        {% else %}
+                        <p>Вы не авторизированы</p>
+                        <a href="{% url 'login' %}">Войти</a>
+                        <form action="{% url 'main' %}"><button> Главная страница </button></form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+
     {% endif %}
 {% endblock %}

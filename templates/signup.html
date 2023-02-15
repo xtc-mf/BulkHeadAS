@@ -1,20 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Регистрация</title>
-</head>
-<body>
-<h2>Регистрация</h2>
-<form method="post">
-    {% csrf_token %}
-    <table>
-    {{ form.as_table }}
-    </table>
-    <button type ="submit">Регистрация</button>
-    <form><a href="{% url 'main' %}">Отмена</a></form>
-    <form><a href="{% url 'login' %}">Есть аккаунт? Войдите.</a></form>
+{% extends 'base.html' %}
 
-</form>
-</body>
-</html>
+{% block title %} Регистрация {% endblock %}
+
+{% block content %}
+    <div class="calendarbox">
+        <div align="center">
+            <h2>Регистрация</h2>
+            <form method="post">
+            {% csrf_token %}
+            <table>
+                {{ form.as_table }}
+            </table>
+             <button class="btn btn-outline-primary" type="submit">Подтвердить</button>
+             <form action="{% url 'main' %}"><button class="btn btn-outline-primary"> Отмена </button></form>
+            <form action="{% url 'login' %}"><button class="btn btn-outline-secondary"> Есть аккаунт? Войдите </button></form>
+        </form>
+    </form>
+        </div></div>
+{% endblock %}

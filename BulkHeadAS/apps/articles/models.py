@@ -4,9 +4,6 @@ from django.db import models
 
 class Services(models.Model):
     service_name = models.CharField('Название услуги', max_length=50, default='')
-    #service_time_work = models.IntegerField('Примерное время работы')
-    #service_employee = models.CharField('00Фамилия работника', max_length=50)
-
     def __str__(self):
         return self.service_name
     class Meta:
@@ -20,7 +17,7 @@ class Article(models.Model):
     car = models.CharField('Марка машины', max_length=255, default='Toyota')
     car_model = models.CharField('Модель автомобиля', max_length=255, default='Auris')
     phone_number = models.CharField('Номер телефона', max_length=255, default='+375445905077')
-    pub_order = models.DateTimeField('Дата заказа', default=timezone.localtime(timezone.now()))
+    pub_order = models.DateTimeField('Дата заказа')
     client_service = models.ForeignKey(Services, on_delete=models.CASCADE, default=1)
 
     USERNAME_FIELD = 'fio'

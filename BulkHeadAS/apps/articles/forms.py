@@ -15,11 +15,3 @@ class Entrollment(ModelForm):
         model = Article
         fields = ["fio", "car", "car_model", "phone_number", "client_service", "pub_order"]
         labels = {'fio': 'ФИО', "car": "Марка автомобиля", "car_model": "Модель автомобиля", "phone_number": "Телефонный номер", "client_service": "Услуга", "pub_order": "Время записи"}
-    #
-    #client_service = forms.ForeignKey(Services, on_delete=models.CASCADE)
-
-
-
-    #pub_order = forms.DateTimeField(initial='Дата заказа')
-    #choose = forms.ChoiceField('Услуга', choices=SERVICES, widget=forms.Select)
-    #

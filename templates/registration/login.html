@@ -1,15 +1,18 @@
 {% extends 'base.html' %}
-{% block title %} Log in{% endblock %}
+{% block title %} Вход {% endblock %}
 {% block content %}
-    <h2>Авторизация</h2>
-    <form method="post">
-    {% csrf_token %}
-        <table>
-    {{ form.as_table }}
-        </table>
-    <button type="submit">Войти</button>
-            <form><a href="{% url 'main' %}">Отмена</a></form>
-
-        <form><a href="{% url 'signup' %}">Нет аккаутна? Зарегиструйтесь</a></form>
-    </form>
+    <div class="calendarbox">
+        <div align="center">
+            <h2>Авторизация</h2>
+            <form method="post">
+            {% csrf_token %}
+                <table>
+            {{ form.as_table }}
+                </table>
+                    <button class="btn btn-outline-primary" type="submit">Войти</button>
+                    <form action="{% url 'main' %}"><button class="btn btn-outline-primary"> Отмена </button></form>
+                    <form action="{% url 'signup' %}"><button class="btn btn-outline-secondary"> Нет аккаунта? Зарегестрируйтесь </button></form>
+            </form>
+        </div>
+    </div>
 {% endblock %}

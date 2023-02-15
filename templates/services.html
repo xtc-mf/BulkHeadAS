@@ -4,8 +4,13 @@
 {% block content %}
     <h1> Мы предоставялем: </h1>
     {% for i in object_list %}
-        <p> {{ i.service_name }} </p>
+        <div align="center">
+        <table>
+            <p> <b>{{ i.service_name }}</b> </p>
+            <form action="{% url 'entrollment' %}"><button class="btn btn-outline-secondary"> <b>Записаться на услугу</b> </button></form>
+            <p> </p>
+        </table>
+        </div>
+
     {% endfor %}
-    <form action="{% url 'main' %}"><button>Главная страница</button></form>
-    <form action="{% url 'entrollment' %}"><button>Записаться на услугу</button></form>
 {% endblock %}

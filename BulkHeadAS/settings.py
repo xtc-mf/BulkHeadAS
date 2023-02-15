@@ -42,7 +42,6 @@ INSTALLED_APPS = [
     'abstractuser.apps.AbstractuserConfig',
     'articles.apps.ArticlesConfig',
     'user',
-    'grappelli',
 
     'django.contrib.admin',
     'django.contrib.auth',
