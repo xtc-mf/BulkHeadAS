@@ -4,7 +4,7 @@ from .models import *
 
 class Entrollment(ModelForm):
 
-    fio = forms.CharField(label="Фамилия Имя Отвество")
+    fio = forms.CharField(label="Фамилия Имя Отчество")
     car = forms.CharField(label="Автомобиль")
     car_model = forms.CharField(label="Модель")
     phone_number = forms.CharField(label="Номер телефона")
