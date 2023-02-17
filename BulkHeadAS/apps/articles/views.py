@@ -28,5 +28,4 @@ def serviceEntrollment(request):
             form.save()
         return redirect('index')
     return render(request, 'entrollment.html', {'form': Entrollment})
-#
 

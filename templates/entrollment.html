@@ -4,11 +4,13 @@
 
     <form action="{% url 'entrollment' %}" method="POST">
     {% csrf_token %}
-    <table>{{ form.as_table }}</table>
-    <button class="btn btn-outline-primary" type="submit">Записаться на услугу</button>
-       <a href="{% url 'main' %}"><button class="btn btn-outline-primary">Отмена</button></a>
+        <div class="calendarbox" style="margin-top: 150px">
+            <div align="center">
+                <table style="margin-bottom: 50px">{{ form.as_table }} </table>
+                <button class="btn btn-outline-primary" type="submit">Записаться на услугу</button>
+                <a href="{% url 'main' %}"><button class="btn btn-outline-primary">Отмена</button></a>
+            </div>
 
-
+        </div>
     </form>
-
 {% endblock %}
