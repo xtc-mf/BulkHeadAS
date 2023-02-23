@@ -5,12 +5,15 @@
     <h1> Мы предоставляем: </h1>
     {% for i in object_list %}
         <div align="center">
-        <table>
-            <p> <b>{{ i.service_name }}</b> </p>
-            <form action="{% url 'entrollment' %}"><button class="btn btn-outline-secondary"> <b>Записаться на услугу</b> </button></form>
-            <p> </p>
-        </table>
+            <div>
+                <p> <b>
+                    <br>
+                    {{ i.service_name }}
+                    <br>
+                </b></p>
+            </div>
         </div>
+
 
     {% endfor %}
 {% endblock %}
