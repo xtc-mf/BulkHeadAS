@@ -24,8 +24,15 @@ CARS = [
     ('BMW', (('6-Series', '6-Series'), ('X6', 'X6'), ('X5', 'X5'), ('5-Series Gran Turismo', '5-Series Gran Turismo'), ('X4', 'X4'),
         ('X3', 'X3'), ('7-Series', '7-Series'), ('3-Series Gran Turismo', '3-Series Gran Turismo'), ('5-Series', '5-Series'), ('Z4', 'Z4')
                 )
-     )
-
+     ),
+    ('Mercedes-Benz', (('CLS-Class', 'CLS-Class'), ('GLA-Class', 'GLA-Class'), ('GL-Class', 'GL-Class'), ('GLE-Coupe', 'GLE-Coupe'), ('CL-Class', 'CL-Class'),
+        ('GLE', 'GLE'), ('S-Class', 'S-Class'), ('GLK-CLASS', 'GLK-Class'), ('GLS-Class', 'GLS-Class'), ('CLK-Class', 'CLK-Class')
+                )
+     ),
+    ('Audi', (('A7', 'A7'), ('Q7', 'Q7'), ('A5', 'A5'), ('Q5', 'Q5'), ('Q3', 'Q3'),
+        ('A1', 'A1'), ('TT', 'TT'), ('A3', 'A3'), ('A8', 'A8'), ('A6 Allroad Quattro', 'A6 Allroad Quattro')
+                )
+     ),
 ]
 class Services(models.Model):
     service_name = models.CharField('Название услуги', max_length=50, default='')
