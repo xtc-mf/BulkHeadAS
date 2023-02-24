@@ -1,3 +1,4 @@
+from django.contrib import messages
 from django.views.generic.edit import CreateView
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
@@ -25,7 +26,10 @@ def serviceEntrollment(request):
     if request.method == "POST":
         form = Entrollment(request.POST)
         if form.is_valid():
+            messages.success(request, 'Заявка успешно оставлена!')
             form.save()
-        return redirect('index')
+            return redirect('index')
+        else:
+            messages.error(request, 'Ошибка заполнения формы!')
     return render(request, 'entrollment.html', {'form': Entrollment})
 

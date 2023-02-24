@@ -6,7 +6,18 @@
     {% csrf_token %}
         <div class="calendarbox" style="margin-top: 150px">
             <div align="center">
-                <table style="margin-bottom: 50px">{{ form.as_table }} </table>
+                <table style="margin-bottom: 50px">
+
+                    ФИО: {{ form.fio }}
+                    <br>
+                    Автомобиль: {{ form.car }}
+                    <br>
+                    Телефонный номер: {{ form.phone_number }}
+                    <br>
+                    Услуга: {{ form.client_service }}
+                    <br>
+                    Время: {{ form.pub_order }}
+                </table>
                 <button class="btn btn-outline-primary" type="submit">Записаться на услугу</button>
                 <a href="{% url 'main' %}"><button class="btn btn-outline-primary">Отмена</button></a>
             </div>

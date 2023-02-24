@@ -33,6 +33,31 @@ CARS = [
         ('A1', 'A1'), ('TT', 'TT'), ('A3', 'A3'), ('A8', 'A8'), ('A6 Allroad Quattro', 'A6 Allroad Quattro')
                 )
      ),
+    ('Geely', (('Coolray SX11', 'Coolray SX11'), ('Atlas', 'Atlas'), ('Emgrand EC7', 'Emgrand EC7'), ('Vision', 'Vision'), ('GC6', 'GC6'),
+        ('MK Cross', 'MK Cross'), ('MK', 'MK'), ('Emgrand X7', 'Emgrand X7'), ('Otaka CK', 'Otaka CK'), ('CK', 'CK')
+                )
+     ),
+    ('Lada', (('Granta Sport', 'Granta Sport'), ('Vesta Cross', 'Vesta Cross'), ('Vesta', 'Vesta'), ('Kalina Cross', 'Kalina Cross'), ('X-Ray Cross', 'X-Ray Cross'),
+        ('Kalina Sport', 'Kalina Sport'), ('Granta Cross', 'Granta Cross'), ('X-Ray', 'X-Ray'), ('Largus', 'Largus'), ('Largus Cross', 'Largus Cross')
+                )
+     ),
+    ('Volkswagen', (('Passat CC', 'Passat CC'), ('Touareg', 'Touareg'), ('Tiguan', 'Tiguan'), ('Phaeton', 'Phaeton'), ('Scirocco', 'Scirocco'),
+        ('Amarok', 'Amarok'), ('Beetle', 'Beetle'), ('Jetta', 'Jetta'), ('Multivan', 'Multivan'), ('Touran', 'Touran')
+                )
+     ),
+    ('Lexus', (('LX570', 'LX570'), ('GS350', 'GS350'), ('IS250', 'RX450h'), ('ES250', 'ES250'), ('GS250', 'GS250'),
+        ('LS430', 'LS430'), ('LS600hL', 'LS600hl'), ('NX200t', 'NX200t'), ('RX400h', 'RX400h'), ('RX350', 'RX350')
+                )
+     ),
+    ('Škoda', (('Superb', 'Superb'), ('Kodiaq', 'Kodiaq'), ('Rapid', 'Rapid'), ('Octavia', 'Octavia'), ('Karoq', 'Karoq'),
+        ('Yeti', 'Yeti  '), ('Fabia', 'Fabia'), ('Roomster', 'Roomster'), ('Felicia', 'Felicia')
+                )
+     ),
+    ('Nissan', (('Leaf', 'Leaf'), ('Teana', 'Teana'), ('Terrano', 'Terrano'), ('Cima', 'Cima'), ('Silvia', 'Silvia'),
+        ('Almera', 'Almera'), ('Murrano', 'Murrano'), ('Patrol', 'Patrol'), ('Sentra', 'Sentra'), ('X-Trail', 'X-Trail')
+                )
+     ),
+
 ]
 class Services(models.Model):
     service_name = models.CharField('Название услуги', max_length=50, default='')

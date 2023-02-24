@@ -34,7 +34,30 @@ CARS = [
         ('A1', 'A1'), ('TT', 'TT'), ('A3', 'A3'), ('A8', 'A8'), ('A6 Allroad Quattro', 'A6 Allroad Quattro')
                 )
      ),
+    ('Geely', (('Coolray SX11', 'Coolray SX11'), ('Atlas', 'Atlas'), ('Emgrand EC7', 'Emgrand EC7'), ('Vision', 'Vision'), ('GC6', 'GC6'),
+        ('MK Cross', 'MK Cross'), ('MK', 'MK'), ('Emgrand X7', 'Emgrand X7'), ('Otaka CK', 'Otaka CK'), ('CK', 'CK')
+                )
+     ),
+    ('Lada', (('Granta Sport', 'Granta Sport'), ('Vesta Cross', 'Vesta Cross'), ('Vesta', 'Vesta'), ('Kalina Cross', 'Kalina Cross'), ('X-Ray Cross', 'X-Ray Cross'),
+        ('Kalina Sport', 'Kalina Sport'), ('Granta Cross', 'Granta Cross'), ('X-Ray', 'X-Ray'), ('Largus', 'Largus'), ('Largus Cross', 'Largus Cross')
+                )
+     ),
+    ('Volkswagen', (('Passat CC', 'Passat CC'), ('Touareg', 'Touareg'), ('Tiguan', 'Tiguan'), ('Phaeton', 'Phaeton'), ('Scirocco', 'Scirocco'),
+        ('Amarok', 'Amarok'), ('Beetle', 'Beetle'), ('Jetta', 'Jetta'), ('Multivan', 'Multivan'), ('Touran', 'Touran')
+                )
+     ),
+    ('Škoda', (('Superb', 'Superb'), ('Kodiaq', 'Kodiaq'), ('Rapid', 'Rapid'), ('Octavia', 'Octavia'), ('Karoq', 'Karoq'),
+        ('Yeti', 'Yeti  '), ('Fabia', 'Fabia'), ('Roomster', 'Roomster'), ('Felicia', 'Felicia')
+                )
+     ),
+    ('Nissan', (('Leaf', 'Leaf'), ('Teana', 'Teana'), ('Terrano', 'Terrano'), ('Cima', 'Cima'), ('Silvia', 'Silvia'),
+        ('Almera', 'Almera'), ('Murrano', 'Murrano'), ('Patrol', 'Patrol'), ('Sentra', 'Sentra'), ('X-Trail', 'X-Trail')
+                )
+     ),
 ]
+
+class DateInput(forms.DateInput):
+    input_type = 'date'
 
 class Entrollment(ModelForm):
 
@@ -45,9 +68,9 @@ class Entrollment(ModelForm):
                                     help_text="Телефонный номер должен быть в формате: +375(17/25/29/33/44)XXXXXXX.",
                                     )
     client_service = models.ForeignKey(Services, on_delete=models.CASCADE, default=1)
-    pub_order = forms.DateTimeField(label="Запись на")
-
+    pub_order = forms.DateField(label="Запись на", widget=DateInput)
     class Meta:
         model = Article
+        widgets = { 'my_date_field': DateInput() }
         fields = ["fio", "car", "phone_number", "client_service", "pub_order"]
         labels = {'fio': 'ФИО', "car": "Автомобиль", "phone_number": "Телефонный номер", "client_service": "Услуга", "pub_order": "Время записи"}
