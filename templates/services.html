@@ -1,19 +1,25 @@
 {% extends 'base.html' %}
 {% block title %} Наши услуги {% endblock %}
+<style>
 
+</style>
 {% block content %}
-    <h1> Мы предоставляем: </h1>
-    {% for i in object_list %}
-        <div align="center">
-            <div>
-                <p> <b>
-                    <br>
-                    {{ i.service_name }}
-                    <br>
-                </b></p>
+    <h1 style="margin-bottom: 50px;"> Мы предоставляем: </h1>
+    <div>
+        {% for i in object_list %}
+            <div style="font-family: Bahnschrift; margin-bottom: 30px" class="wrapper" align="center">
+                <div style="align-items: center">
+                    <h3 style="background-color: indigo; color: white">{{ i.service_name }}</h3>
+                </div>
+                <div style="background-color: mediumpurple; color: white">
+                    Цена: <p style="color: rgb(3, 116, 193)"><b>{{ i.service_price }} BYN</b></p>
+                    Примерное время работы: <p style="color: rgb(3, 116, 193)"><b>{{ i.service_time }} минут</b></p>
+                </div>
             </div>
-        </div>
+        {% endfor %}
+        <form action="{% url 'entrollment' %}" align="center"><button align="center" class="btn btn-outline-light"
+                                                   style="font-size: 200%; margin-top: 270px;
+                                                    border: 3px solid black;">Записаться на услугу</button></form>
+    </div>
 
-
-    {% endfor %}
 {% endblock %}

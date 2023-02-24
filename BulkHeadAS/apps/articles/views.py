@@ -1,6 +1,5 @@
 from django.contrib import messages
 from django.views.generic.edit import CreateView
-from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from .models import Article
 from django.views.generic import ListView
@@ -32,4 +31,3 @@ def serviceEntrollment(request):
         else:
             messages.error(request, 'Ошибка заполнения формы!')
     return render(request, 'entrollment.html', {'form': Entrollment})
-

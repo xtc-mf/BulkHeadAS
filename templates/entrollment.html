@@ -1,25 +1,38 @@
 {% extends 'base.html' %}
 {% block title %} Запись на услугу {% endblock %}
+
 {% block content %}
 
     <form action="{% url 'entrollment' %}" method="POST">
     {% csrf_token %}
-        <div class="calendarbox" style="margin-top: 150px">
+        <div class="calendarbox">
             <div align="center">
                 <table style="margin-bottom: 50px">
-
-                    ФИО: {{ form.fio }}
-                    <br>
-                    Автомобиль: {{ form.car }}
-                    <br>
-                    Телефонный номер: {{ form.phone_number }}
-                    <br>
-                    Услуга: {{ form.client_service }}
-                    <br>
-                    Время: {{ form.pub_order }}
+        <div class="row">
+        <div class="column">
+            <h2 style="font-family: Bahnschrift">ФИО</h2>
+            <p>{{ form.fio }}</p>
+        </div>
+        <div class="column">
+            <h2 style="font-family: Bahnschrift">Автомобиль</h2>
+            <p>{{ form.car }}</p>
+        </div>
+            <div class="column">
+            <h2 style="font-family: Bahnschrift">Телефонный номер</h2>
+            <p>{{ form.phone_number }}</p>
+        </div>
+        <div class="column">
+            <h2 style="font-family: Bahnschrift">Услуга</h2>
+            <p>{{ form.client_service }}</p>
+        </div>
+            </div>
+            <div class="column">
+            <h2 style="font-family: Bahnschrift">Время</h2>
+            <p>{{ form.pub_order }}</p>
+        </div>
                 </table>
-                <button class="btn btn-outline-primary" type="submit">Записаться на услугу</button>
-                <a href="{% url 'main' %}"><button class="btn btn-outline-primary">Отмена</button></a>
+                <button class="btn btn-outline-primary" type="submit" style="font-family: Bahnschrift">Записаться на услугу</button>
+                <a href="{% url 'main' %}"><button class="btn btn-outline-primary" style="font-family: Bahnschrift">Отмена</button></a>
             </div>
 
         </div>

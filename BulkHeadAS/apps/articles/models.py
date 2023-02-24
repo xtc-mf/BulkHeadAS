@@ -72,7 +72,10 @@ class Services(models.Model):
 
 class Article(models.Model):
 
-    fio = models.CharField('ФИО', max_length=30, default='Рубец Алексей Сергеевич')
+    fio = models.CharField('ФИО',
+                           max_length=30,
+                           validators=[(RegexValidator(r'[А-ЯЁёA-Z][а-яёa-z]{2,25}\s[А-ЯЁёA-Z][а-яёa-z]{2,25}\s[А-ЯЁёA-Z][А-Яа-яЁёA-Za-z]{2,25}\s?'))],
+                           default='Рубец Алексей Сергеевич')
     car = models.CharField('Автомобиль', max_length=30, choices=CARS, default='Не указан')
 
     phone_number = models.CharField('Телефонный номер',

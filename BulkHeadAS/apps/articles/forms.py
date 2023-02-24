@@ -57,18 +57,21 @@ CARS = [
 ]
 
 class DateInput(forms.DateInput):
-    input_type = 'date'
+    input_type = 'datetime-local'
 
 class Entrollment(ModelForm):
 
-    fio = forms.CharField(label="Фамилия Имя Отчество")
+    fio = forms.CharField(label="Фамилия Имя Отчество",
+                           max_length=30,
+                           validators=[(RegexValidator(r'[А-ЯЁёA-Z][а-яёa-z]{2,25}\s[А-ЯЁёA-Z][а-яёa-z]{2,25}\s[А-ЯЁёA-Z][А-Яа-яЁёA-Za-z]{2,25}\s?'))]
+                          )
     car = forms.ChoiceField(choices = CARS, label='Автомобиль')
     phone_number = forms.RegexField(regex=phone_regex,
                                     label='Номер телефона',
                                     help_text="Телефонный номер должен быть в формате: +375(17/25/29/33/44)XXXXXXX.",
                                     )
     client_service = models.ForeignKey(Services, on_delete=models.CASCADE, default=1)
-    pub_order = forms.DateField(label="Запись на", widget=DateInput)
+    pub_order = forms.DateTimeField(label="Запись на", widget=DateInput)
     class Meta:
         model = Article
         widgets = { 'my_date_field': DateInput() }
