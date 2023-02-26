@@ -73,7 +73,7 @@ class Services(models.Model):
 class Article(models.Model):
 
     fio = models.CharField('ФИО',
-                           max_length=30,
+                           max_length=50,
                            validators=[(RegexValidator(r'[А-ЯЁёA-Z][а-яёa-z]{2,25}\s[А-ЯЁёA-Z][а-яёa-z]{2,25}\s[А-ЯЁёA-Z][А-Яа-яЁёA-Za-z]{2,25}\s?'))],
                            default='Рубец Алексей Сергеевич')
     car = models.CharField('Автомобиль', max_length=30, choices=CARS, default='Не указан')
@@ -93,3 +93,27 @@ class Article(models.Model):
     class Meta:
         verbose_name = 'Клиент'
         verbose_name_plural = 'Клиенты'
+
+class Employee(models.Model):
+    employee_fio = models.CharField('ФИО',
+                                        max_length=50,
+                                        validators=[(RegexValidator(
+                                            r'[А-ЯЁёA-Z][а-яёa-z]{2,25}\s[А-ЯЁёA-Z][а-яёa-z]{2,25}\s[А-ЯЁёA-Z][А-Яа-яЁёA-Za-z]{2,25}\s?'))],
+                                        default='Рубец Алексей Сергеевич')
+    employee_age = models.IntegerField('Возраст', default=18, help_text='Возраст работника')
+    employee_phoneNumber = models.CharField('Телефонный номер',
+                                            validators=[RegexValidator(r'\+375(17|29|25|33|44)[0-9]{7}')],
+                                            max_length=20,
+                                            null=False,
+                                            help_text="Телефонный номер должен быть в форме: '+375(17/25/29/33/44)XXXXXXX'.",
+                                            blank=False)
+    employee_rank = models.CharField('Должность',
+                                     max_length=25,
+                                     default='')
+    employee_client = models.ForeignKey(Article, on_delete=models.CASCADE, default=0)
+    def __str__(self):
+        return self.employee_fio
+
+    class Meta:
+        verbose_name = 'Работник'
+        verbose_name_plural = 'Работники'

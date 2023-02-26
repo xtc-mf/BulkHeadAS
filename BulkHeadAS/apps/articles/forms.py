@@ -63,7 +63,7 @@ class Entrollment(ModelForm):
 
     fio = forms.CharField(label="Фамилия Имя Отчество",
                            max_length=30,
-                           validators=[(RegexValidator(r'[А-ЯЁёA-Z][а-яёa-z]{2,25}\s[А-ЯЁёA-Z][а-яёa-z]{2,25}\s[А-ЯЁёA-Z][А-Яа-яЁёA-Za-z]{2,25}\s?'))]
+                           validators=[(RegexValidator(r'[А-ЯЁёA-Z][а-яёa-z]{2,25}\s[А-ЯЁёA-Z][а-яёa-z]{2,25}\s[А-ЯЁёA-Z][А-Яа-яЁёA-Za-z]{2,25}\s?'))],
                           )
     car = forms.ChoiceField(choices = CARS, label='Автомобиль')
     phone_number = forms.RegexField(regex=phone_regex,
