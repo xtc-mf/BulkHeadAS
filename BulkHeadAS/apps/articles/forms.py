@@ -54,6 +54,22 @@ CARS = [
         ('Almera', 'Almera'), ('Murrano', 'Murrano'), ('Patrol', 'Patrol'), ('Sentra', 'Sentra'), ('X-Trail', 'X-Trail')
                 )
      ),
+    ('Citroën', (('C-Crosser', 'C-Crosser'), ('DS4', 'DS4'), ('C5', 'C5'), ('C4 Aircross', 'C4 Aircross'), ('C-Elysee', 'C-Elysee'),
+        ('C1', 'C1'), ('DS5', 'DS5'), ('C4 Picasso', 'C4 Picasso'), ('C4 Grand Picasso', 'C4 Grand Picasso'), ('C3', 'C3')
+                )
+     ),
+    ('Peugeot', (('208', '208'), ('508', '508'), ('3008', '3008'), ('4007', '4007'), ('4008', '4008'),
+        ('408', '408'), ('407', '407'), ('607', '607'), ('Expert', 'Expert'), ('2008', '2008')
+                )
+     ),
+    ('Mitshubishi', (('Lancer Evolution', 'Lancer Evolution'), ('Grandis', 'Grandis'), ('Eclipse Cross', 'Eclipse Cross'), ('GTO', 'GTO'), ('Outlander', 'Outlander'),
+        ('Delica D5', 'Delica D5'), ('FTO', 'FTO'), ('Galant', 'Galant'), ('ASX', 'ASX'), ('Pajero', 'Pajero')
+                )
+     ),
+    ('KIA', (('Optima', 'Optima'), ('K5', 'K5'), ('Quoris', 'Quoris'), ('Stinger', 'Stinger'), ('Rio', 'Rio'),
+        ('Rio X', 'Rio X'), ('Operus', 'Operus'), ('Sportage', 'Sportage'), ('Soul', 'Soul'), ('Mohave', 'Mohave')
+                )
+     )
 ]
 
 class DateInput(forms.DateInput):
