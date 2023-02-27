@@ -5,7 +5,10 @@
 
     <form action="{% url 'entrollment' %}" method="POST">
     {% csrf_token %}
-        <div style="border: 5px; padding: 10px; margin: 20px 450px 20px; border-radius: 75px; border-color: rgb(3, 116, 193); border-style: outset">
+        <div>
+            <img src="https://static.wikia.nocookie.net/transformersprimes/images/7/7f/%D0%91%D0%B0%D0%BB%D0%BA%D1%85%D1%8D%D0%B4_%D0%BC%D0%B8%D0%BD%D0%B8-%D0%B8%D0%B7%D0%BE%D0%B1%D1%80%D0%B0%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5.png/revision/latest?cb=20180225152502&path-prefix=ru"
+            style="width: 300px; height: 300px">
+            <div style="border: 5px; padding: 10px; margin: 20px 450px 20px; border-radius: 75px; border-color: rgb(3, 116, 193); border-style: outset">
             <div align="center">
                 <table style="margin-bottom: 50px">
         <div class="row">
@@ -34,7 +37,10 @@
                 <button class="btn btn-outline-primary" type="submit" style="font-family: Bahnschrift">Записаться на услугу</button>
                 <a href="{% url 'main' %}"><button class="btn btn-outline-primary" style="font-family: Bahnschrift">Отмена</button></a>
             </div>
-
         </div>
+            <img src="https://static.wikia.nocookie.net/transformersprimes/images/7/7a/Post-78246-0-93297300-1357717503.png/revision/latest?cb=20171216102856&path-prefix=ru"
+                 style="float: right; width: 250px; height: 300px">
+        </div>
+
 </form>
 {% endblock %}

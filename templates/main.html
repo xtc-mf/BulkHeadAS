@@ -168,7 +168,7 @@
 </head>
 <body>
 <header class>
-    <div class="square">
+    <div class="square" id="main">
         <h1 style="font-family: Bahnschrift; color: white; margin-left: 50px;" ><b>BulkHead Automobile Service</b></h1>
         <h3 style="font-family: Bahnschrift; color: white; margin-left: 50px; margin-top: 40px">
             Ремонт и обслуживание <br>
@@ -248,6 +248,14 @@
             <form action="{% url 'service' %}"><button align="center" class="btn btn-outline-light" style="font-size: 200%; margin-top: 270px; border: 3px solid white;">Посмотреть прайс-лист</button></form>
         </div>
     </div>
+    <div style="padding-bottom: 60%; background: linear-gradient(45deg, rgb(102, 0, 133), rgb(3, 116, 193)); width: 100%; height: 350px">
+        <div style="float: left; margin-top: 250px" align="center">
+            <img src="https://o.remove.bg/downloads/70b94938-6d9b-4247-b8cc-12950ef0a76c/vse-marky-avtomobiley-removebg-preview.png" style="width: 60%; height: 80%">
+        </div>
+        <div>
+        </div>
+    </div>
+
 </content>
 <footer class="site-footer">
       <div class="container">
@@ -283,11 +291,9 @@
           <div class="col-xs-6 col-md-3">
             <h6>Быстрая навигация</h6>
             <ul class="footer-links">
-              <li><a href="http://scanfcode.com/about/">About Us</a></li>
-                <li><form action="{% url 'service' %}"><a>Записаться на услугу</a></form></li>
-              <li><a href="http://scanfcode.com/contribute-at-scanfcode/">Contribute</a></li>
-              <li><a href="http://scanfcode.com/privacy-policy/">Privacy Policy</a></li>
-              <li><a href="http://scanfcode.com/sitemap/">Sitemap</a></li>
+                <li><form action="{% url 'service' %}"><a href="{% url 'service' %}">Наши услуги</a></form></li>
+                <li><form action="{% url 'entrollment' %}"><a href="{% url 'entrollment' %}">Оставить заявку</a></form></li>
+                <li><form action="{% url 'main' %}"><a href="{% url 'myaccount' %}">Личный кабинет</a></form></li>
             </ul>
           </div>
         </div>
@@ -301,10 +307,10 @@
 
           <div class="col-md-4 col-sm-6 col-xs-12">
             <ul class="social-icons">
-              <li><a class="facebook" href="https://vk.com/xtcmf"><i class="fa fa-facebook">ВК</i></a></li>
-              <li><a class="twitter" href="https://t.me/sxuthside"><i class="fa fa-twitter">ТГ</i></a></li>
-              <li><a class="dribbble" href="https://github.com/xtc-mf"><i class="fa fa-dribbble">GH</i></a></li>
-              <li><a class="linkedin" href="https://www.youtube.com/@rxby5880">YT<i class="fa fa-linkedin"></i></a></li>
+                <li><a class="facebook" href="https://vk.com/xtcmf"><i class="fa fa-facebook"><img src="https://cdn-icons-png.flaticon.com/512/39/39699.png" style="width: 80%; height: 80%; padding-right: 3px; padding-bottom: 3px"></i></a></li>
+                <li><a class="twitter" href="https://t.me/sxuthside"><i class="fa fa-twitter"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111710.png" style="width: 80%; height: 80%; padding-bottom: 5px"></i></a></li>
+                <li><a class="dribbble" href="https://github.com/xtc-mf"><i class="fa fa-dribbble"><img src="https://cdn-icons-png.flaticon.com/512/3291/3291695.png" style="width: 70%; height: 70%; padding-bottom: 5px"></i></a></li>
+                <li><a class="linkedin" href="https://www.youtube.com/@rxby5880"><i class="fa fa-linkedin"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384012.png" style="width: 80%; height: 80%; padding-bottom: 5px"></i></a></li>
             </ul>
           </div>
         </div>
