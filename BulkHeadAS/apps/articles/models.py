@@ -1,4 +1,6 @@
 import datetime
+from ast import Str
+
 from django.utils import timezone
 import re
 from django.core.validators import RegexValidator
@@ -133,3 +135,14 @@ class Employee(models.Model):
     class Meta:
         verbose_name = 'Работник'
         verbose_name_plural = 'Работники'
+
+class Work(models.Model):
+    employee = models.ForeignKey(Employee, on_delete=models.CASCADE, default=0)
+    client = models.ForeignKey(Article, on_delete=models.CASCADE, default=0)
+    is_done = models.BooleanField('Работа выполнена', default=False)
+    class Meta:
+        verbose_name = 'Текущая работа'
+        verbose_name_plural = 'Текущие работы'
+
+    def __str__(self):
+        return 'Текущая работа'
