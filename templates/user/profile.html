@@ -20,6 +20,9 @@
                         <form action="{% url 'main' %}"><button class="btn btn-outline-warning"> Главная страница </button></form>
                         <p> </p>
                         <form action="{% url 'service' %}"><button class="btn btn-outline-success"> Перейти к услугам </button></form>
+                        {% for i in article %}
+                            {{ i.fio }}
+                        {% endfor %}
                         {% else %}
                         <p>Вы не авторизированы</p>
                         <a href="{% url 'login' %}">Войти</a>
