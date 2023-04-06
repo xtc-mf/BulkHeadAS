@@ -4,7 +4,7 @@ from .models import *
 
 phone_regex = r'\+375(17|29|25|33|44)[0-9]{7}'
 regex_error = 'Телефонный номер должен быть в формате: +375(17/25/29/33/44)1234567.'
-
+"""
 CARS = [
     ('Toyota', (('C-HR', 'C-HR'), ('Sai', 'Sai'), ('Auris', 'Auris'), ('Prius', 'Prius'), ('Land Cruiser', 'Land Cruiser'),
         ('Avensis', 'Avensis'), ('Camry', 'Camry'), ('Highlander', 'Highlander'), ('RAV4', 'RAV4'), ('Crown', 'Crown')
@@ -71,6 +71,7 @@ CARS = [
                 )
      )
 ]
+"""
 
 class DateInput(forms.DateInput):
     input_type = 'datetime-local'
@@ -81,7 +82,7 @@ class Entrollment(ModelForm):
                            max_length=30,
                            validators=[(RegexValidator(r'[А-ЯЁёA-Z][а-яёa-z]{2,25}\s[А-ЯЁёA-Z][а-яёa-z]{2,25}\s[А-ЯЁёA-Z][А-Яа-яЁёA-Za-z]{2,25}\s?'))],
                           )
-    car = forms.ChoiceField(choices = CARS, label='Автомобиль')
+    car = models.ForeignKey('Автомобиль', on_delete=models.CASCADE, default=1)
     phone_number = forms.RegexField(regex=phone_regex,
                                     label='Номер телефона',
                                     help_text="Телефонный номер должен быть в формате: +375(17/25/29/33/44)XXXXXXX.",
@@ -89,7 +90,7 @@ class Entrollment(ModelForm):
     client_service = models.ForeignKey(Services, on_delete=models.CASCADE, default=1)
     pub_order = forms.DateTimeField(label="Запись на", widget=DateInput)
     class Meta:
-        model = Article
-        widgets = { 'my_date_field': DateInput() }
+        model = Client
+        widgets = {'my_date_field': DateInput()}
         fields = ["fio", "car", "phone_number", "client_service", "pub_order"]
         labels = {'fio': 'ФИО', "car": "Автомобиль", "phone_number": "Телефонный номер", "client_service": "Услуга", "pub_order": "Время записи"}
