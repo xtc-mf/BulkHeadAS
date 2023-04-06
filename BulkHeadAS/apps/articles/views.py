@@ -1,13 +1,13 @@
 from django.contrib import messages
 from django.views.generic.edit import CreateView
 from django.shortcuts import render, redirect
-from .models import Article
+from .models import Client
 from django.views.generic import ListView
 from . models import Services
 from .forms import Entrollment
 
 class MyAccountView(CreateView):
-    model = Article
+    model = Client
     template_name = 'user/profile.html'
 
     fields = '__all__'
