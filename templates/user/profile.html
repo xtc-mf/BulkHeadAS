@@ -8,25 +8,19 @@
         <div class="col-md-5 border-right">
             <div class="p-3 py-5">
                 {% if user.is_authenticated %}
-                <div class="d-flex justify-content-between align-items-center mb-3">
-                    <h4 class="text-right">Ваш профиль</h4>
-                </div>
-                Здравствуйте, <b>{{ user.username }}</b>!
-                    <p></p>
-                <div class="row mt-2" align="center">
-                    <div class="btn-group" align="center">
-                        <form action="{% url 'login' %}"><button class="btn btn-outline-danger"> Сменить пользователя </button></form>
-                        <p> </p>
-                        <form action="{% url 'main' %}"><button class="btn btn-outline-warning"> Главная страница </button></form>
-                        <p> </p>
-                        <form action="{% url 'service' %}"><button class="btn btn-outline-success"> Перейти к услугам </button></form>
-                        {% for i in article %}
-                            {{ i.fio }}
-                        {% endfor %}
-                        {% else %}
-                        <p>Вы не авторизированы</p>
-                        <a href="{% url 'login' %}">Войти</a>
-                        <form action="{% url 'main' %}"><button> Главная страница </button></form>
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <h4 class="text-right">Ваш профиль</h4>
+                    </div>
+                    Здравствуйте, <b>{{ user.username }}</b>!
+                    <div class="row mt-2" align="center">
+                        <div class="btn-group" align="center">
+                            <form action="{% url 'login' %}"><button class="btn btn-outline-danger"> Сменить пользователя </button></form>
+                            <form action="{% url 'main' %}"><button class="btn btn-outline-warning"> Главная страница </button></form>
+                            <form action="{% url 'service' %}"><button class="btn btn-outline-success"> Перейти к услугам </button></form>
+                {% else %}
+                            <p>Вы не авторизированы</p>
+                            <a href="{% url 'login' %}">Войти</a>
+                            <form action="{% url 'main' %}"><button> Главная страница </button></form>
                     </div>
                 </div>
             </div>
