@@ -25,9 +25,8 @@ def serviceEntrollment(request):
     if request.method == "POST":
         form = Entrollment(request.POST)
         if form.is_valid():
-            messages.success(request, 'Пришла новая заявка!')
+            messages.success(request, 'Заявка успешно оставлена!')
             form.save()
-            return redirect('index')
         else:
-            messages.error(request, 'Пользователь пытается оставить заявку')
+            messages.error(request, 'Ошибка заполнения формы!')
     return render(request, 'entrollment.html', {'form': Entrollment})
