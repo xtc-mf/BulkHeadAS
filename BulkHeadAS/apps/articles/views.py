@@ -14,6 +14,11 @@ class MyAccountView(CreateView):
 
 class ShowServices(ListView):
     model = Services
+    allServices = Services.objects.all()
+    sorted_services_name = sorted(allServices, key=lambda service: service.service_name)
+    context= {'allServices': allServices,
+              'sorted_services_name': sorted_services_name,
+              }
     template_name = 'services.html'
 
 def index(request):

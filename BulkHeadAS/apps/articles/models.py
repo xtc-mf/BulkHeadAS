@@ -97,7 +97,7 @@ CARS = [
 ]
 """
 class Services(models.Model):
-    service_name = models.CharField('Название услуги', max_length=50, default='')
+    service_name = models.CharField('Название услуги', max_length=200, default='')
     service_price = models.DecimalField('Стоимость', decimal_places=2, max_digits=5, default=0.0)
     service_time = models.IntegerField('Примерное время', default=1, help_text='Время указано в минутах')
 
