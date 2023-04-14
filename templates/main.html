@@ -8,10 +8,17 @@
            crossorigin="anonymous">
 	<title>BULKHEAD AUTO SERVICE</title>
     <style>
-        .square { background: linear-gradient(45deg, rgb(102, 0, 133), rgb(3, 116, 193)); width: 100%; height: 725px; }
+        .square {
+            width: 100%;
+            height: 550px;
+            background-image: url("https://cdn-ds.com/blogs-media/sites/113/2019/12/03163359/COR_MY20_0028_V001_a.jpg");
+            background-size: contain;
+            position: center;
+            background-repeat: no-repeat;
+        }
         .maingrid { display: grid; grid-template-columns: 1fr 1fr 1fr; }
         .site-footer {
-  background-color:#26272b;
+  background: linear-gradient(109.6deg, rgba(0, 0, 0, 0.93) 11.2%, rgb(63, 61, 61) 78.9%);
   padding:45px 0 20px;
   font-size:15px;
   line-height:24px;
@@ -167,28 +174,13 @@
     </style>
 </head>
 <body>
-<header class>
-    <div class="square" id="main">
-        <h1 style="font-family: Bahnschrift; color: white; margin-left: 50px;" ><b>BulkHead Automobile Service</b></h1>
-        <h3 style="font-family: Bahnschrift; color: white; margin-left: 50px; margin-top: 40px">
-            Ремонт и обслуживание <br>
-            легковых автомобилей и микроавтобусов
-        </h3>
-        <div>
-            <p style="color: white; margin-left: 50px; font-family: Bahnschrift; margin-top: 20px">
-                ООО <b>«BulkHead Automobile Service»</b><br>
-                <b>220012, РБ, г. Минск, ул. Колесникова 3</b><br>
-                Режим работы: <b>пн-сб: с 08:00 до 21:00</b><br>
-                Телефон: <b>+375 44 777-64-29</b>
-                E-mail: <b>office@kbp.by</b>
-            </p>
-            <img src="https://www.adept-auto.by/img/dist/bg-header.png" style="width: 950px; height: 350px" align="right">
-            <div style="margin-left: 50px; margin-top: 50px">
-                <div align="center">
-                    <form action="{% url 'myaccount' %}"><button class="btn btn-outline-light" style="font-family: Bahnschrift; font-size: 200%;"><b>Личный кабинет</b></button></form>
-                    <form action="{% url 'service' %}"><button class="btn btn-outline-light" style="font-family: Bahnschrift; margin-top: 15px; font-size: 200%;"><b>Наши услуги</b></button></form>
-                </div>
-            </div>
+<header>
+    <h1 style="font-family: Bahnschrift; color: black;" align="center"><b>BulkHead Automobile Service</b></h1>
+    <div class="square">
+        <div style="background: linear-gradient(109.6deg, rgba(0, 0, 0, 0.93) 11.2%, rgb(63, 61, 61) 78.9%);" align="center">
+            <h3 style="font-family: Bahnschrift; color: white; font-size: 350%" align="center">
+                Ремонт и обслуживание легковых автомобилей и микроавтобусов марки <b>TOYOTA</b>
+            </h3>
         </div>
     </div>
 </header>
@@ -248,12 +240,7 @@
             <form action="{% url 'service' %}"><button align="center" class="btn btn-outline-light" style="font-size: 200%; margin-top: 270px; border: 3px solid white;">Посмотреть прайс-лист</button></form>
         </div>
     </div>
-    <div style="padding-bottom: 60%; background: linear-gradient(45deg, rgb(102, 0, 133), rgb(3, 116, 193)); width: 100%; height: 350px">
-        <div style="float: left; margin-top: 250px" align="center">
-            <img src="https://o.remove.bg/downloads/70b94938-6d9b-4247-b8cc-12950ef0a76c/vse-marky-avtomobiley-removebg-preview.png" style="width: 60%; height: 80%">
-        </div>
-        <div>
-        </div>
+    <div>
     </div>
 
 </content>
@@ -284,16 +271,16 @@
               <li>Телефон: +375 44 777-64-29</li>
               <li>E-mail: office@kbp.by</li>
               <li>220012, РБ, г. Минск, ул. Колесникова 3</li>
-              <li>Реклама и продвижение <a href="https://az360.by/"><b>AZ Studio</b></a></li>
+              <li>Реклама и продвижение <a href="https://az360.by/" style="text-decoration: none"><b>AZ Studio</b></a></li>
             </ul>
           </div>
 
           <div class="col-xs-6 col-md-3">
             <h6>Быстрая навигация</h6>
             <ul class="footer-links">
-                <li><form action="{% url 'service' %}"><a href="{% url 'service' %}">Наши услуги</a></form></li>
-                <li><form action="{% url 'entrollment' %}"><a href="{% url 'entrollment' %}">Оставить заявку</a></form></li>
-                <li><form action="{% url 'main' %}"><a href="{% url 'myaccount' %}">Личный кабинет</a></form></li>
+                <li><form action="{% url 'service' %}"><a href="{% url 'service' %}" style="text-decoration: none">Наши услуги</a></form></li>
+                <li><form action="{% url 'entrollment' %}"><a href="{% url 'entrollment' %}" style="text-decoration: none">Оставить заявку</a></form></li>
+                <li><form action="{% url 'main' %}"><a href="{% url 'myaccount' %}" style="text-decoration: none">Личный кабинет</a></form></li>
             </ul>
           </div>
         </div>

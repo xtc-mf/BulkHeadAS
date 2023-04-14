@@ -1,25 +1,245 @@
 {% extends 'base.html' %}
 {% block title %} Наши услуги {% endblock %}
-<style>
-
+{% block content %}<style>
+        .square {
+            width: 100%;
+            height: 550px;
+            background-image: url("https://cdn-ds.com/blogs-media/sites/113/2019/12/03163359/COR_MY20_0028_V001_a.jpg");
+            background-size: contain;
+            position: center;
+            background-repeat: no-repeat;
+        }
+        .maingrid { display: grid; grid-template-columns: 1fr 1fr 1fr; }
+        .site-footer {
+  background: linear-gradient(109.6deg, rgba(0, 0, 0, 0.93) 11.2%, rgb(63, 61, 61) 78.9%);
+  padding:45px 0 20px;
+  font-size:15px;
+  line-height:24px;
+  color:#737373;
+}
+        .site-footer hr {
+  border-top-color:#bbb;
+  opacity:0.5
+}
+        .site-footer hr.small {
+  margin:20px 0
+}
+        .site-footer h6 {
+  color:#fff;
+  font-size:16px;
+  text-transform:uppercase;
+  margin-top:5px;
+  letter-spacing:2px
+}
+        .site-footer a {
+  color:#737373;
+}
+        .site-footer a:hover {
+  color:#3366cc;
+  text-decoration:none;
+}
+        .footer-links {
+  padding-left:0;
+  list-style:none
+}
+        .footer-links li
+        {
+  display:block
+}
+        .footer-links a
+        {
+  color:#737373
+}
+        .footer-links a:active,.footer-links a:focus,.footer-links a:hover
+        {
+  color:#3366cc;
+  text-decoration:none;
+}
+        .footer-links.inline li
+        {
+  display:inline-block
+}
+        .site-footer .social-icons
+        {
+  text-align:right
+}
+        .site-footer .social-icons a
+        {
+  width:40px;
+  height:40px;
+  line-height:40px;
+  margin-left:6px;
+  margin-right:0;
+  border-radius:100%;
+  background-color:#33353d
+}
+        .copyright-text
+        {
+  margin:0
+}
+        @media (max-width:991px)
+        {
+  .site-footer [class^=col-]
+  {
+    margin-bottom:30px
+  }
+}
+        @media (max-width:767px)
+        {
+  .site-footer
+  {
+    padding-bottom:0
+  }
+  .site-footer .copyright-text,.site-footer .social-icons
+  {
+    text-align:center
+  }
+}
+        .social-icons
+        {
+  padding-left:0;
+  margin-bottom:0;
+  list-style:none
+}
+        .social-icons li
+        {
+  display:inline-block;
+  margin-bottom:4px
+}
+        .social-icons li.title
+        {
+  margin-right:15px;
+  text-transform:uppercase;
+  color:#96a2b2;
+  font-weight:700;
+  font-size:13px
+}
+        .social-icons a{
+  background-color:#eceeef;
+  color:#818a91;
+  font-size:16px;
+  display:inline-block;
+  line-height:44px;
+  width:44px;
+  height:44px;
+  text-align:center;
+  margin-right:8px;
+  border-radius:100%;
+  -webkit-transition:all .2s linear;
+  -o-transition:all .2s linear;
+  transition:all .2s linear
+}
+        .social-icons a:active,.social-icons a:focus,.social-icons a:hover
+        {
+  color:#fff;
+  background-color:#29aafe
+}
+        .social-icons.size-sm a
+        {
+  line-height:34px;
+  height:34px;
+  width:34px;
+  font-size:14px
+}
+        .social-icons a.facebook:hover
+        {
+  background-color:#3b5998
+}
+        .social-icons a.twitter:hover
+        {
+  background-color:#00aced
+}
+        .social-icons a.linkedin:hover
+        {
+  background-color:#007bb6
+}
+        .social-icons a.dribbble:hover
+        {
+  background-color:#ea4c89
+}
+        @media (max-width:767px) {
+            .social-icons li.title {
+                display: block;
+                margin-right: 0;
+                font-weight: 600
+            }
+        }
 </style>
-{% block content %}
-    <h1 style="margin-bottom: 50px;"> Мы предоставляем: </h1>
-    <div>
+    <h1> Мы предоставляем: </h1>
+    <div align="center">
+    {{ object_list.sort }}
         {% for i in object_list %}
-            <div style="font-family: Bahnschrift; margin-bottom: 30px" class="wrapper" align="center">
-                <div style="align-items: center">
-                    <h3 style="background-color: indigo; color: white">{{ i.service_name }}</h3>
-                </div>
-                <div style="background-color: mediumpurple; color: white">
-                    Цена: <p style="color: rgb(3, 116, 193)"><b>{{ i.service_price }} BYN</b></p>
-                    Примерное время работы: <p style="color: rgb(3, 116, 193)"><b>{{ i.service_time }} минут</b></p>
-                </div>
+            <div style="font-family: Bahnschrift;" align="center">
+            <div align="left">
+                <p>
+                    <h3>{{ i.service_name }}</h3>
+                    Цена: <p><b>{{ i.service_price }} BYN</b></p>
+                    Примерное время работы: <p><b>{{ i.service_time }} минут</b></p>
+                </p>
+            </div>
             </div>
         {% endfor %}
         <form action="{% url 'entrollment' %}" align="center"><button align="center" class="btn btn-outline-light"
                                                    style="font-size: 200%; margin-top: 270px;
                                                     border: 3px solid black;">Записаться на услугу</button></form>
     </div>
+<footer class="site-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12 col-md-6">
+            <h6>О нас</h6>
+            <p class="text-justify" style="font-family: Bahnschrift">
+                Наш автосервис специализируется на ремонте и техническом обслуживании легковых автомобилей и микроавтобусов.<br>
+                <br>Работая в этой сфере более 9 лет, мы успешно справляемся с неисправностями любой сложности. Наши механики неустанно совершенствуют свои навыки, а перечень доступного им рабочего оборудования обновляется и возрастает из года в год.<br>
+                <br>Автосервис выполнит техническое обслуживание и ремонт автомобилей любого уровня сложности. Быстрое восстановление:<br>
 
+                <ul style="font-family: Bahnschrift">
+                    <li>кузова и подвески;</li>
+                    <li>двигателя и выхлопной системы;</li>
+                    <li>автоматической и механической коробки передач;</li>
+                    <li>тормозной системы и электрики;</li>
+                    <li>замена фильтров, масла, амортизаторов и колодок и другое.</li>
+                </ul>
+            </p>
+          </div>
+
+          <div class="col-xs-6 col-md-3">
+            <h6>Важная информация</h6>
+            <ul class="footer-links" style="font-family: Bahnschrift">
+              <li>Режим работы: пн-сб: с 08:00 до 21:00</li>
+              <li>Телефон: +375 44 777-64-29</li>
+              <li>E-mail: office@kbp.by</li>
+              <li>220012, РБ, г. Минск, ул. Колесникова 3</li>
+              <li>Реклама и продвижение <a href="https://az360.by/" style="text-decoration: none"><b>AZ Studio</b></a></li>
+            </ul>
+          </div>
+
+          <div class="col-xs-6 col-md-3">
+            <h6>Быстрая навигация</h6>
+            <ul class="footer-links">
+                <li><form action="{% url 'service' %}"><a href="{% url 'service' %}" style="text-decoration: none">Наши услуги</a></form></li>
+                <li><form action="{% url 'entrollment' %}"><a href="{% url 'entrollment' %}" style="text-decoration: none">Оставить заявку</a></form></li>
+                <li><form action="{% url 'main' %}"><a href="{% url 'myaccount' %}" style="text-decoration: none">Личный кабинет</a></form></li>
+            </ul>
+          </div>
+        </div>
+        <hr>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 col-sm-6 col-xs-12">
+            <p class="copyright-text"><b>Copyright &copy; ООО «Bulkhead»</b><br>2023 Все права защищены.</p>
+          </div>
+
+          <div class="col-md-4 col-sm-6 col-xs-12">
+            <ul class="social-icons">
+                <li><a class="facebook" href="https://vk.com/xtcmf"><i class="fa fa-facebook"><img src="https://cdn-icons-png.flaticon.com/512/39/39699.png" style="width: 80%; height: 80%; padding-right: 3px; padding-bottom: 3px"></i></a></li>
+                <li><a class="twitter" href="https://t.me/sxuthside"><i class="fa fa-twitter"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111710.png" style="width: 80%; height: 80%; padding-bottom: 5px"></i></a></li>
+                <li><a class="dribbble" href="https://github.com/xtc-mf"><i class="fa fa-dribbble"><img src="https://cdn-icons-png.flaticon.com/512/3291/3291695.png" style="width: 70%; height: 70%; padding-bottom: 5px"></i></a></li>
+                <li><a class="linkedin" href="https://www.youtube.com/@rxby5880"><i class="fa fa-linkedin"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384012.png" style="width: 80%; height: 80%; padding-bottom: 5px"></i></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+</footer>
 {% endblock %}

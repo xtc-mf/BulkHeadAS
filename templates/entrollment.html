@@ -7,7 +7,7 @@
         .square { background: linear-gradient(45deg, rgb(102, 0, 133), rgb(3, 116, 193)); width: 100%; height: 725px; }
         .maingrid { display: grid; grid-template-columns: 1fr 1fr 1fr; }
         .site-footer {
-  background-color:#26272b;
+  background: linear-gradient(109.6deg, rgba(0, 0, 0, 0.93) 11.2%, rgb(63, 61, 61) 78.9%);
   padding:45px 0 20px;
   font-size:15px;
   line-height:24px;
@@ -209,10 +209,9 @@
                 </div>
             </div>
                 <img src="https://static.wikia.nocookie.net/transformersprimes/images/7/7a/Post-78246-0-93297300-1357717503.png/revision/latest?cb=20171216102856&path-prefix=ru"
-                     style="float: right; width: 150px; height: 200px">
+                     style="float: right; width: 150px; height: 200px;">
             </div>
-        </body>
-        <footer class="site-footer" style="margin-top: 300px">
+            <footer class="site-footer" style="margin-top: 350px">
       <div class="container">
         <div class="row">
           <div class="col-sm-12 col-md-6">
@@ -239,16 +238,16 @@
               <li>Телефон: +375 44 777-64-29</li>
               <li>E-mail: office@kbp.by</li>
               <li>220012, РБ, г. Минск, ул. Колесникова 3</li>
-              <li>Реклама и продвижение <a href="https://az360.by/"><b>AZ Studio</b></a></li>
+              <li>Реклама и продвижение <a href="https://az360.by/" style="text-decoration: none"><b>AZ Studio</b></a></li>
             </ul>
           </div>
 
           <div class="col-xs-6 col-md-3">
             <h6>Быстрая навигация</h6>
             <ul class="footer-links">
-                <li><form action="{% url 'service' %}"><a href="{% url 'service' %}">Наши услуги</a></form></li>
-                <li><form action="{% url 'entrollment' %}"><a href="{% url 'entrollment' %}">Оставить заявку</a></form></li>
-                <li><form action="{% url 'main' %}"><a href="{% url 'myaccount' %}">Личный кабинет</a></form></li>
+                <li><form action="{% url 'service' %}"><a href="{% url 'service' %}" style="text-decoration: none">Наши услуги</a></form></li>
+                <li><form action="{% url 'entrollment' %}"><a href="{% url 'entrollment' %}" style="text-decoration: none">Оставить заявку</a></form></li>
+                <li><form action="{% url 'main' %}"><a href="{% url 'myaccount' %}" style="text-decoration: none">Личный кабинет</a></form></li>
             </ul>
           </div>
         </div>
@@ -257,7 +256,7 @@
       <div class="container">
         <div class="row">
           <div class="col-md-8 col-sm-6 col-xs-12">
-            <p class="copyright-text">Copyright &copy; 2023 Все права защищены.</p>
+            <p class="copyright-text"><b>Copyright &copy; ООО «Bulkhead»</b><br>2023 Все права защищены.</p>
           </div>
 
           <div class="col-md-4 col-sm-6 col-xs-12">
@@ -270,6 +269,7 @@
           </div>
         </div>
       </div>
-</footer>
+</footer sty>
+         </body>
     </form>
 {% endblock %}
