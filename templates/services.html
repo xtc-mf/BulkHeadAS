@@ -165,7 +165,9 @@
             }
         }
 </style>
-    <h1> Мы предоставляем: </h1>
+    <div style="background-image: url(https://www.hdcarwallpapers.com/walls/toyota_camry_hybrid_ws_2018_4k_2-HD.jpg); background-size: 100%;">
+    <div style="background: white; margin-left: 300px; margin-right: 300px;">
+        <h1 align="center"> Мы предоставляем: </h1>
     <div align="center">
     {{ object_list.sort }}
         {% for i in object_list %}
@@ -183,7 +185,9 @@
                                                    style="font-size: 200%; margin-top: 270px;
                                                     border: 3px solid black;">Записаться на услугу</button></form>
     </div>
-<footer class="site-footer">
+    </div>
+    </div>
+<div class="site-footer">
       <div class="container">
         <div class="row">
           <div class="col-sm-12 col-md-6">
@@ -241,5 +245,6 @@
           </div>
         </div>
       </div>
+</div>
 </footer>
 {% endblock %}
